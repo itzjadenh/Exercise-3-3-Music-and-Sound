@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://sp64y2eqbd63"]
+[gd_scene load_steps=18 format=3 uid="uid://sp64y2eqbd63"]
 
 [ext_resource type="Script" path="res://Brick/Brick_Container.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cfb204qt38vvo" path="res://Paddle/Paddle.tscn" id="2"]
@@ -9,6 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://cb6abwxodebx1" path="res://UI/HUD.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://d03l3yccdo8fa" path="res://UI/Instructions.tscn" id="8"]
 [ext_resource type="Script" path="res://Effects/Camera.gd" id="9"]
+[ext_resource type="AudioStream" uid="uid://d3kjg054rq6g0" path="res://Assets/piano music.mp3" id="10_ymw7n"]
+[ext_resource type="AudioStream" uid="uid://doneqywsibhex" path="res://Assets/wall.wav" id="11_p8fta"]
+[ext_resource type="AudioStream" uid="uid://biibrlckj7ruw" path="res://Assets/untitled.wav" id="12_in263"]
+[ext_resource type="AudioStream" uid="uid://c41f6k13dr0sl" path="res://Assets/paddle.wav" id="13_hvhei"]
+[ext_resource type="AudioStream" uid="uid://xieah5s7qufh" path="res://Assets/brocik.wav" id="14_c350j"]
+[ext_resource type="AudioStream" uid="uid://cyn4yh81rjpwb" path="res://Assets/dies.wav" id="15_dxtb3"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(200, 1000)
@@ -74,3 +80,22 @@ visible = false
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 script = ExtResource("9")
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ymw7n")
+autoplay = true
+
+[node name="Wall_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_p8fta")
+
+[node name="Ball_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_in263")
+
+[node name="Paddle_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_hvhei")
+
+[node name="Brick_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_c350j")
+
+[node name="Die_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_dxtb3")
